@@ -1,0 +1,280 @@
+#VRML_SIM R2021a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the Chaser
+# Extracted from: SC_3DoF.urdf
+
+PROTO Chaser [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 1 0 0
+  field  SFString    name            "Chaser"  # Is `Robot.name`.
+  field  SFString    controller      "void"    # Is `Robot.controller`.
+  field  MFString    controllerArgs  []        # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""        # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE     # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE      # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE     # Is `Robot.selfCollision`.
+  field  SFBool      staticBase      TRUE      # Defines if the robot base should be pinned to the static environment.
+  field  MFNode      toolSlot        []        # Extend the robot with new nodes at the end of the arm.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Transform {
+        translation 0.000000 0.000000 0.125000
+        rotation 1.000000 0.000000 0.000000 1.570796
+        children [
+          Shape {
+            appearance DEF Grey PBRAppearance {
+              baseColor 0.500000 0.500000 0.500000
+              transparency 0.000000
+              roughness 1.000000
+              metalness 0
+              emissiveColor 0.000000 0.000000 0.000000
+            }
+            geometry Cylinder {
+              radius 0.05
+              height 0.25
+            }
+          }
+        ]
+      }
+      DEF Joint_1 HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 0.000000 1.000000
+          anchor 0.000000 0.000000 0.250000
+          dampingConstant 0.0
+          staticFriction 0.0
+        }
+        device [
+          RotationalMotor {
+            name "Joint_1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "Joint_1_sensor"
+          }
+        ]
+        endPoint DEF Link_1 Solid {
+          translation 0.000000 0.000000 0.250000
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            Transform {
+              translation 0.000000 0.000000 0.100000
+              rotation 1.000000 0.000000 0.000000 1.570796
+              children [
+                Shape {
+                  appearance DEF Blue PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    transparency 0.000000
+                    roughness 1.000000
+                    metalness 0
+                    emissiveColor 0.000000 0.000000 0.000000
+                  }
+                  geometry Cylinder {
+                    radius 0.05
+                    height 0.2
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation 0.000000 0.000000 0.000000
+              rotation 1.000000 0.000000 0.000000 1.570796
+              children [
+                Shape {
+                  appearance DEF Orange PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    transparency 0.000000
+                    roughness 1.000000
+                    metalness 0
+                    emissiveColor 0.000000 0.000000 0.000000
+                  }
+                  geometry Cylinder {
+                    radius 0.1
+                    height 0.1
+                  }
+                }
+              ]
+            }
+            DEF Joint_2 HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 1.000000 0.000000 0.000000
+                anchor 0.000000 0.000000 0.200000
+                dampingConstant 0.0
+                staticFriction 0.0
+              }
+              device [
+                RotationalMotor {
+                  name "Joint_2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "Joint_2_sensor"
+                }
+              ]
+              endPoint DEF Link_2 Solid {
+                translation 0.000000 0.000000 0.200000
+                rotation 0.000000 1.000000 0.000000 0.000000
+                children [
+                  Transform {
+                    translation 0.000000 0.000000 0.375000
+                    rotation 1.000000 0.000000 0.000000 1.570796
+                    children [
+                      Shape {
+                        appearance USE Blue
+                        geometry Cylinder {
+                          radius 0.05
+                          height 0.75
+                        }
+                      }
+                    ]
+                  }
+                  Transform {
+                    translation 0.000000 0.000000 0.000000
+                    rotation 0.577349 0.577351 -0.577351 2.094397
+                    children [
+                      Shape {
+                        appearance USE Orange
+                        geometry Cylinder {
+                          radius 0.075
+                          height 0.15
+                        }
+                      }
+                    ]
+                  }
+                  DEF Joint_3 HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 1.000000 0.000000 0.000000
+                      anchor 0.000000 0.000000 0.750000
+                      dampingConstant 0.0
+                      staticFriction 0.0
+                    }
+                    device [
+                      RotationalMotor {
+                        name "Joint_3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "Joint_3_sensor"
+                      }
+                    ]
+                    endPoint DEF Link_3 Solid {
+                      translation 0.000000 0.000000 0.750000
+                      rotation 0.000000 1.000000 0.000000 0.000000
+                      children [
+                        Transform {
+                          translation 0.000000 0.000000 0.375000
+                          rotation 1.000000 0.000000 0.000000 1.570796
+                          children [
+                            Shape {
+                              appearance USE Blue
+                              geometry Cylinder {
+                                radius 0.05
+                                height 0.75
+                              }
+                            }
+                          ]
+                        }
+                        Transform {
+                          translation 0.000000 0.000000 0.000000
+                          rotation 0.577349 0.577351 -0.577351 2.094397
+                          children [
+                            Shape {
+                              appearance USE Orange
+                              geometry Cylinder {
+                                radius 0.075
+                                height 0.15
+                              }
+                            }
+                          ]
+                        }
+                        DEF Link_EE Solid {
+                          translation 0.000000 0.000000 0.750000
+                          rotation 0.000000 1.000000 0.000000 0.000000
+                          children [
+                            Shape {
+                              appearance DEF Red PBRAppearance {
+                                baseColor 0.500000 0.500000 0.500000
+                                transparency 0.000000
+                                roughness 1.000000
+                                metalness 0
+                                emissiveColor 0.000000 0.000000 0.000000
+                              }
+                              geometry Sphere {
+                                radius 0.1
+                              }
+                            }
+                          ]
+                          name "Link_EE"
+                          physics Physics {
+                            density -1
+                            mass 0.000000
+                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                          }
+                        }
+                        Group {
+                          children IS toolSlot
+                        }
+                      ]
+                      name "Link_3"
+                      physics Physics {
+                        density -1
+                        mass 10.000000
+                        centerOfMass [ 0.000000 0.000000 0.375000 ]
+                        inertiaMatrix [
+                          1.000000e-01 1.000000e-01 1.000000e-01
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "Link_2"
+                physics Physics {
+                  density -1
+                  mass 10.000000
+                  centerOfMass [ 0.000000 0.000000 0.375000 ]
+                  inertiaMatrix [
+                    1.000000e-01 1.000000e-01 1.000000e-01
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "Link_1"
+          physics Physics {
+            density -1
+            mass 5.000000
+            centerOfMass [ 0.000000 0.000000 0.100000 ]
+            inertiaMatrix [
+              5.000000e-02 5.000000e-02 5.000000e-02
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+    ]
+    name IS name 
+    %{ if fields.staticBase.value == false then }%
+    physics Physics {
+      density -1
+      mass 5.000000
+      centerOfMass [ 0.000000 0.000000 0.125000 ]
+      inertiaMatrix [
+        5.000000e-02 5.000000e-02 5.000000e-02
+        0.000000e+00 0.000000e+00 0.000000e+00
+      ]
+    }
+    %{ end }%
+  }
+}

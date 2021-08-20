@@ -1,0 +1,40 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.10335141799061975 0.9849747631586043 0.1383589546794119 1.8281784880275687
+  position 5.554750523823623 2.8216639861927626 -1.5496766764111216
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 100 100
+  floorTileSize 5 5
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
+}
+Chaser {
+  rotation 1 0 0 -1.5707953071795862
+  controller "superroboarm2"
+  supervisor TRUE
+  selfCollision TRUE
+  toolSlot [
+    DEF GRIPPER Solid {
+      translation 0 0 0.75
+      scale 0.2 0.2 0.2
+      children [
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+  ]
+}

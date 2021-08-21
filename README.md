@@ -34,7 +34,7 @@ The trained neural network was used to predict the joint angles for end effector
 
 ![Hnet-image](https://user-images.githubusercontent.com/64823050/130329990-f971c5ec-b915-47a9-a528-4472f07ac505.gif)
 
-The accuracy was 71.73% with a precision of 0.2.
+The overall accuracy was 71.73% with a precision of 0.2.
 
 
 ## References

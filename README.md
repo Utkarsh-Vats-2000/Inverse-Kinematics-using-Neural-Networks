@@ -3,12 +3,16 @@
 This project is aimed to calculate the inverse kinematics of a 3-DoF robotic manipulator using neural networks. The complexity of this problem is given by the robot’s geometry and the nonlinear trigonometric equations that describe the mapping between the Cartesian space and the joint space
 
 
+
+
 ## Dependencies
 
 - Cyberobotics, Webots
 - Python==3.7
 - Numpy
 - Tensorflow
+
+
 
 
 ## Approach
@@ -28,6 +32,8 @@ The neural network contain layers as shown, with a relu activation function at i
 ![repo12](https://user-images.githubusercontent.com/64823050/130329974-3b6fcf90-af34-4e33-a55b-b7b0eac2dbae.png)
 
 
+
+
 ## Results
 
 The trained neural network was used to predict the joint angles for end effector position x = 0.40212911, y = 1.116457, z = -0.48671574, and the result is shown in GIF.
@@ -35,6 +41,8 @@ The trained neural network was used to predict the joint angles for end effector
 ![Hnet-image](https://user-images.githubusercontent.com/64823050/130329990-f971c5ec-b915-47a9-a528-4472f07ac505.gif)
 
 The overall accuracy was 71.73% with a precision of 0.2.
+
+
 
 
 ## References

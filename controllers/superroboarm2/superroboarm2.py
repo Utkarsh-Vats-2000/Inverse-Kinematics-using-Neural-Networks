@@ -17,9 +17,9 @@ for i in range(3) :
 #target = supervisor.getFromDef("TARGET")
 end_effector = supervisor.getFromDef('GRIPPER')
 while supervisor.step(timestep) != -1:
-    arms[0].setPosition(1.2815872)
-    arms[1].setPosition(-0.28690085)
-    arms[2].setPosition(0.18845692)
+    arms[0].setPosition(-0.70)
+    arms[1].setPosition(-1.4)
+    arms[2].setPosition(1.79)
     print(end_effector.getPosition())
     #print(target.getPosition())
     #print(target.getId())
